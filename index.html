@@ -1,24 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Pulling Pushing</title>
-    <link rel="shortcut icon" href="favicon.png">
-    <link rel="stylesheet" href="style_fullwidth.css">
-    <script src="%UNITY_WEBGL_LOADER_URL%"></script>
-    <script>
-        var unityInstance = UnityLoader.instantiate("unityContainer", "%UNITY_WEBGL_BUILD_URL%");
-    </script>
+    <title>Unity WebGL Player | Project HaNhi</title>
   </head>
-  <body>
-    <div class="webgl-content">
-      <div id="unityContainer"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Pulling Pushing</div>
-      </div>
-    </div>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
+    <script src="Build/github-hanhi2021.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/github-hanhi2021.data.gz",
+        frameworkUrl: "Build/github-hanhi2021.framework.js.gz",
+        codeUrl: "Build/github-hanhi2021.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Project HaNhi",
+        productVersion: "0.1",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
   </body>
 </html>
